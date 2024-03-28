@@ -1,0 +1,21 @@
+[project]
+name = "garagem"
+version = "0.1.0"
+description = "exercicio tutorial Marco Andre"
+authors = [
+    {name = "Rafaella", email = "rafaelacamilly2018@gmail.com"},
+]
+dependencies = [
+    "django>=5.0.3",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
