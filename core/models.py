@@ -6,3 +6,10 @@ class Marca(models.Model):
 
     def __str__(self):
         return self.nome.toUpper()
+
+
+class Categoria(models.Model):
+    descricao = models.CharField(max_length = 100)
+
+    def __str__(self):
+        return self.descricao
