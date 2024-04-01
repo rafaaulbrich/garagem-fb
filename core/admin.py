@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from .models import Marca, Categoria, Acessorio, Cor, Veiculo
+from .serializers import MarcaSerializer
 
 admin.site.register(Marca)
 admin.site.register(Categoria)
