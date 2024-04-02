@@ -29,4 +29,4 @@ class AcessorioSerializer(ModelSerializer):
 class VeiculoSerializer(ModelSerializer):
     class Meta:
         model = Veiculo
-        fields = '__all__'
+        fields = '{self.id}, {self.marca}, {self.ano}'
