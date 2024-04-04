@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
 from core.models import Marca, Categoria, Cor, Acessorio, Veiculo
-from core.serializers import MarcaSerializer, CategoriaSerializer, CorSerializer, AcessorioSerializer, VeiculoSerializer
+from core.serializers import MarcaSerializer, CategoriaSerializer, CorSerializer, AcessorioSerializer, VeiculoSerializer, VeiculoDetailSerializer
 
 class MarcaViewSet(ModelViewSet):
     queryset = Marca.objects.all()
@@ -25,4 +25,8 @@ class AcessorioViewSet(ModelViewSet):
 
 class VeiculoViewSet(ModelViewSet):
     queryset = Veiculo.objects.all()
-    serializer_class = VeiculoSerializer
+    
+    def get_serializer_class(self):
+         if self.action in ["list", "retrieve"]:
+             return VeiculoDetailSerializer
+         return VeiculoSerializer
